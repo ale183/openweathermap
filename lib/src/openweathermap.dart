@@ -11,7 +11,7 @@ class OpenWeather {
 
   Future<Weather> currentWeatherByName(
     String cityName, {
-    Units unit = Units.STANDARD,
+    Units units = Units.STANDARD,
     Language lang = Language.EN,
   }) async {
     return Weather.fromJson(
@@ -19,7 +19,24 @@ class OpenWeather {
         'weather',
         params: {
           'q': cityName,
-          'units': unitsMappings[unit],
+          'units': unitsMappings[units],
+          'lang': languageMappings[lang],
+        },
+      ),
+    );
+  }
+
+  Future<Weather> currentWeatherById(
+    int id, {
+    Units units = Units.STANDARD,
+    Language lang = Language.EN,
+  }) async {
+    return Weather.fromJson(
+      await _request(
+        'weather',
+        params: {
+          'id': id,
+          'units': unitsMappings[units],
           'lang': languageMappings[lang],
         },
       ),
@@ -28,10 +45,10 @@ class OpenWeather {
 
   Future<Map<String, dynamic>> _request(
     String method, {
-    Map<String, dynamic> params,
+    required Map<String, dynamic> params,
   }) async {
-    params?.updateAll((k, v) => '$v');
-    var fparams = params?.cast<String, String>();
+    params.updateAll((k, v) => '$v');
+    var fparams = params.cast<String, String>();
     fparams['appid'] = _key;
     var response = await http.get(
       Uri.https('$_baseUrl', '/data/2.5/$method', fparams),

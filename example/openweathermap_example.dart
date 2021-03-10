@@ -1,14 +1,22 @@
 import 'package:openweathermap/openweathermap.dart';
 
-void main() {
+void main() async {
   var op = OpenWeather('');
-  var json = op.currentWeatherByName(
+  var cityByName = await op.currentWeatherByName(
     'Bergamo',
-    unit: Units.METRIC,
+    units: Units.METRIC,
   );
-  json.then((value) => {
-        print('Name: ${value.name}\n'
-            'Temp Min: ${value.temperature.tempMin}\n'
-            'Temp Max: ${value.temperature.tempMax}')
-      });
+  print('By Name\nName: ${cityByName.name} (ID: ${cityByName.id})\n'
+      'Temp Min: ${cityByName.temperature.tempMin}\n'
+      'Temp Max: ${cityByName.temperature.tempMax}');
+
+  print('----------');
+
+  var cityById = await op.currentWeatherById(
+    3182164,
+    units: Units.METRIC,
+  );
+  print('By ID\nName: ${cityById.name} (ID: ${cityById.id})\n'
+      'Temp Min: ${cityById.temperature.tempMin}\n'
+      'Temp Max: ${cityById.temperature.tempMax}');
 }
