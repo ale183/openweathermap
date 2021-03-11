@@ -1,23 +1,23 @@
 class Coordinates {
-  double _lon;
   double _lat;
+  double _lon;
 
   Coordinates(
-    this._lon,
     this._lat,
+    this._lon,
   );
 
   factory Coordinates.fromJson(Map<String, dynamic> json) {
-    return Coordinates(json['lon'], json['lat']);
+    return Coordinates(json['lat'], json['lon']);
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'lon': _lon,
       'lat': _lat,
+      'lon': _lon,
     };
   }
 
-  double get lon => _lon;
   double get lat => _lat;
+  double get lon => _lon;
 }

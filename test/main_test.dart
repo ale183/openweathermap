@@ -8,6 +8,8 @@ void main() {
   late OpenWeather openWeather;
   var key = io.Platform.environment['OPENWEATHER_TOKEN'];
   var cityName = 'Bergamo';
+  var cityId = 3182164;
+  var cityCoordinates = Coordinates(45.698, 9.669);
 
   setUp(() async {
     if (key == null) {
@@ -34,6 +36,30 @@ void main() {
     () async {
       var data = await openWeather.currentWeatherByName(cityName);
       expect(data, isA<Weather>());
+      expect(data.id, equals(cityId));
+      expect(data.name, equals(cityName));
+    },
+    skip: false,
+  );
+
+  test(
+    'Get city weather by id',
+    () async {
+      var data = await openWeather.currentWeatherById(cityId);
+      expect(data, isA<Weather>());
+      expect(data.id, equals(cityId));
+      expect(data.name, equals(cityName));
+    },
+    skip: false,
+  );
+
+  test(
+    'Get city weather by coordinates',
+    () async {
+      var data = await openWeather.currentWeatherByCoord(cityCoordinates);
+      expect(data, isA<Weather>());
+      expect(data.id, equals(cityId));
+      expect(data.name, equals(cityName));
     },
     skip: false,
   );

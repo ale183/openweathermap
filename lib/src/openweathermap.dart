@@ -43,6 +43,41 @@ class OpenWeather {
     );
   }
 
+  Future<Weather> currentWeatherByCoord(
+    Coordinates coord, {
+    Units units = Units.STANDARD,
+    Language lang = Language.EN,
+  }) async {
+    return Weather.fromJson(
+      await _request(
+        'weather',
+        params: {
+          'lat': coord.lat,
+          'lon': coord.lon,
+          'units': unitsMappings[units],
+          'lang': languageMappings[lang],
+        },
+      ),
+    );
+  }
+
+  Future<Weather> currentWeatherByZip(
+    int zipCode, {
+    Units units = Units.STANDARD,
+    Language lang = Language.EN,
+  }) async {
+    return Weather.fromJson(
+      await _request(
+        'weather',
+        params: {
+          'zip': zipCode,
+          'units': unitsMappings[units],
+          'lang': languageMappings[lang],
+        },
+      ),
+    );
+  }
+
   Future<Map<String, dynamic>> _request(
     String method, {
     required Map<String, dynamic> params,
