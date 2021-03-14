@@ -1,7 +1,7 @@
 class Wind {
   num _speed;
-  int _deg;
-  int? _gust;
+  num _deg;
+  num? _gust;
 
   Wind(
     this._speed,
@@ -26,6 +26,6 @@ class Wind {
   }
 
   num get speed => _speed;
-  int get deg => _deg;
-  int? get gust => _gust;
+  num get deg => _deg;
+  num? get gust => _gust;
 }

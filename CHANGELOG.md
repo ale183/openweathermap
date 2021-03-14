@@ -1,3 +1,7 @@
+## 0.1.1
+
+- Wind entity bugfix
+
 ## 0.1.0
 
 - Added daily weather forecast (methods + entities)
