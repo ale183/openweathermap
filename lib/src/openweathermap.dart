@@ -78,6 +78,20 @@ class OpenWeather {
     );
   }
 
+  Future<Daily> dailyWeatherByCoord(
+    Coordinates coord, {
+    Units units = Units.STANDARD,
+    Language lang = Language.EN,
+  }) async {
+    return Daily.fromJson(await _request('onecall', params: {
+      'lat': coord.lat,
+      'lon': coord.lon,
+      'units': unitsMappings[units],
+      'lang': languageMappings[lang],
+      'exclude': 'minutely,hourly,alerts,current',
+    }));
+  }
+
   Future<Map<String, dynamic>> _request(
     String method, {
     required Map<String, dynamic> params,

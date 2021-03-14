@@ -63,4 +63,15 @@ void main() {
     },
     skip: false,
   );
+
+  test(
+    'Get daily weather forecast by coordinates',
+    () async {
+      var data = await openWeather.dailyWeatherByCoord(cityCoordinates);
+      expect(data, isA<Daily>());
+      expect(data.dailyWeather, isA<List<DailyWeather>>());
+      expect(data.timezone, isA<String>());
+    },
+    skip: false,
+  );
 }

@@ -30,4 +30,17 @@ void main() async {
   print('By Coordinates\nName: ${cityByCoord.name} (ID: ${cityByCoord.id})\n'
       'Temp Min: ${cityByCoord.temperature.tempMin}\n'
       'Temp Max: ${cityByCoord.temperature.tempMax}');
+
+  print('----------');
+
+  var dailyByCoord = await op.dailyWeatherByCoord(
+    Coordinates(45.698, 9.669),
+    units: Units.METRIC,
+  );
+  print('Daily By Coordinates\n');
+  dailyByCoord.dailyWeather.forEach((weather) {
+    var date = DateTime.fromMillisecondsSinceEpoch(weather.dt * 1000);
+    var temp = weather.temperature.day;
+    print('$date ($temp)');
+  });
 }

@@ -6,7 +6,9 @@ class Weather {
   Temperature _temperature;
   int _visibility;
   Wind _wind;
-  int _clouds;
+  num _clouds;
+  Rain _rain;
+  Snow _snow;
   int _dt;
   int _timezone;
   int _id;
@@ -19,6 +21,8 @@ class Weather {
     this._visibility,
     this._wind,
     this._clouds,
+    this._rain,
+    this._snow,
     this._dt,
     this._timezone,
     this._id,
@@ -33,6 +37,8 @@ class Weather {
       json['visibility'],
       Wind.fromJson(json['wind']),
       json['clouds']['all'],
+      Rain.fromJson(json['rain'] ?? {}),
+      Snow.fromJson(json['snow'] ?? {}),
       json['dt'],
       json['timezone'],
       json['id'],
@@ -40,12 +46,29 @@ class Weather {
     );
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      'coord': _coord.toJson(),
+      'weather': List.generate(_details.length, (i) => _details[i].toJson()),
+      'main': _temperature.toJson(),
+      'visibility': _visibility,
+      'wind': _wind.toJson(),
+      'clouds': _clouds,
+      'dt': _dt,
+      'timezone': _timezone,
+      'id': _id,
+      'name': _name,
+    };
+  }
+
   Coordinates get coord => _coord;
   List<Details> get details => _details;
   Temperature get temperature => _temperature;
   int get visibility => _visibility;
   Wind get wind => _wind;
-  int get clouds => _clouds;
+  num get clouds => _clouds;
+  Rain get rain => _rain;
+  Snow get snow => _snow;
   int get dt => _dt;
   int get timezone => _timezone;
   int get id => _id;
