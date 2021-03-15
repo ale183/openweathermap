@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Added sunrise and sunset
+
 ## 0.1.1
 
 - Wind entity bugfix

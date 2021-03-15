@@ -11,6 +11,8 @@ class Weather {
   Snow _snow;
   int _dt;
   int _timezone;
+  int _sunrise;
+  int _sunset;
   int _id;
   String _name;
 
@@ -25,6 +27,8 @@ class Weather {
     this._snow,
     this._dt,
     this._timezone,
+    this._sunrise,
+    this._sunset,
     this._id,
     this._name,
   );
@@ -41,6 +45,8 @@ class Weather {
       Snow.fromJson(json['snow'] ?? {}),
       json['dt'],
       json['timezone'],
+      json['sys']['sunrise'],
+      json['sys']['sunset'],
       json['id'],
       json['name'],
     );
@@ -56,6 +62,8 @@ class Weather {
       'clouds': _clouds,
       'dt': _dt,
       'timezone': _timezone,
+      'sunrise': _sunrise,
+      'sunset': _sunset,
       'id': _id,
       'name': _name,
     };
@@ -71,6 +79,8 @@ class Weather {
   Snow get snow => _snow;
   int get dt => _dt;
   int get timezone => _timezone;
+  int get sunrise => _sunrise;
+  int get sunset => _sunset;
   int get id => _id;
   String get name => _name;
 }
