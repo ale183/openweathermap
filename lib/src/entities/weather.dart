@@ -1,5 +1,6 @@
-import 'package:openweathermap/openweather_entities.dart';
+import '../../openweather_entities.dart';
 
+/// Weather data
 class Weather {
   Coordinates _coord;
   List<Details> _details;
@@ -16,6 +17,7 @@ class Weather {
   int _id;
   String _name;
 
+  /// Creates a [Weather] object
   Weather(
     this._coord,
     this._details,
@@ -33,6 +35,7 @@ class Weather {
     this._name,
   );
 
+  /// Cretes a [Weather] object from json
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
       Coordinates.fromJson(json['coord']),
@@ -52,6 +55,7 @@ class Weather {
     );
   }
 
+  /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
       'coord': _coord.toJson(),
@@ -69,18 +73,45 @@ class Weather {
     };
   }
 
+  /// [Coordinates] object
   Coordinates get coord => _coord;
+
+  /// List of [Details]
   List<Details> get details => _details;
+
+  /// [Temperature] object
   Temperature get temperature => _temperature;
+
+  /// Visibility
   int get visibility => _visibility;
+
+  /// [Wind] object
   Wind get wind => _wind;
+
+  /// Cloudiness
   num get clouds => _clouds;
+
+  /// [Rain] object
   Rain get rain => _rain;
+
+  /// [Snow] object
   Snow get snow => _snow;
+
+  /// Time of data calculation, unix, UTC
   int get dt => _dt;
+
+  /// Shift in seconds from UTC
   int get timezone => _timezone;
+
+  /// Sunrise time, unix, UTC
   int get sunrise => _sunrise;
+
+  /// Sunset time, unix, UTC
   int get sunset => _sunset;
+
+  /// City ID
   int get id => _id;
+
+  /// City name
   String get name => _name;
 }

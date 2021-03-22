@@ -1,3 +1,4 @@
+/// Daily temperature data
 class DailyTemperature {
   num _day;
   num _min;
@@ -6,6 +7,7 @@ class DailyTemperature {
   num _eve;
   num _night;
 
+  /// Creates a [DailyTemperature] object
   DailyTemperature(
     this._day,
     this._min,
@@ -15,6 +17,7 @@ class DailyTemperature {
     this._night,
   );
 
+  /// Creates a [DailyTemperature] object from json
   factory DailyTemperature.fromJson(Map<String, dynamic> json) {
     return DailyTemperature(
       json['day'],
@@ -26,6 +29,7 @@ class DailyTemperature {
     );
   }
 
+  /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
       'day': _day,
@@ -37,10 +41,21 @@ class DailyTemperature {
     };
   }
 
+  /// Day temperature
   num get day => _day;
+
+  /// Min daily temperature
   num get min => _min;
+
+  /// Max daily temperature
   num get max => _max;
+
+  /// Morning temperature
   num get morn => _morn;
+
+  /// Evening temperature
   num get eve => _eve;
+
+  /// Night temperature
   num get night => _night;
 }

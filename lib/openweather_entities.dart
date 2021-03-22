@@ -1,9 +1,11 @@
+/// OpenWeather entities
+library openweathermap_entities;
+
+export 'src/entities/coordinates.dart';
+export 'src/entities/daily/daily.dart';
 export 'src/entities/daily/daily_feels_like.dart';
 export 'src/entities/daily/daily_temperature.dart';
 export 'src/entities/daily/daily_weather.dart';
-export 'src/entities/daily/daily.dart';
-
-export 'src/entities/coordinates.dart';
 export 'src/entities/details.dart';
 export 'src/entities/rain.dart';
 export 'src/entities/snow.dart';

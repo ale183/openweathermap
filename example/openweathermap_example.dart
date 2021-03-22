@@ -38,9 +38,11 @@ void main() async {
     units: Units.METRIC,
   );
   print('Daily By Coordinates\n');
-  dailyByCoord.dailyWeather.forEach((weather) {
+  var dailyWeather = dailyByCoord.dailyWeather;
+
+  for (var weather in dailyWeather) {
     var date = DateTime.fromMillisecondsSinceEpoch(weather.dt * 1000);
     var temp = weather.temperature.day;
     print('$date ($temp)');
-  });
+  }
 }

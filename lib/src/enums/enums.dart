@@ -1,67 +1,173 @@
+/// Units of measurement
 enum Units {
+  /// Standard
   STANDARD,
+
+  /// Metric
   METRIC,
+
+  /// Imperial
   IMPERIAL,
 }
 
+/// Units enum to String
 final unitsMappings = {
   Units.STANDARD: 'standard',
   Units.METRIC: 'metric',
   Units.IMPERIAL: 'imperial',
 };
 
+/// Supported languages
 enum Language {
+  /// Afrikaans
   AF,
+
+  /// Albanian
   AL,
+
+  /// Arabic
   AR,
+
+  /// Azerbaijani
   AZ,
+
+  /// Bulgarian
   BG,
+
+  /// Catalan
   CA,
+
+  /// Czech
   CZ,
+
+  /// Danish
   DA,
+
+  /// German
   DE,
+
+  /// Greek
   EL,
+
+  /// English
   EN,
+
+  /// Basque
   EU,
+
+  /// Persian (Farsi)
   FA,
+
+  /// Finnish
   FI,
+
+  /// French
   FR,
+
+  /// Galician
   GL,
+
+  /// Hebrew
   HE,
+
+  /// Hindi
   HI,
+
+  /// Croatian
   HR,
+
+  /// Hungarian
   HU,
+
+  /// Indonesian
   ID,
+
+  /// Italian
   IT,
+
+  /// Japanese
   JA,
+
+  /// Korean
   KR,
+
+  /// Latvian
   LA,
+
+  /// Lithuanian
   LT,
+
+  /// Macedonian
   MK,
+
+  /// Norwegian
   NO,
+
+  /// Dutch
   NL,
+
+  /// Polish
   PL,
+
+  /// Portuguese
   PT,
+
+  /// Português Brasil
   PT_BR,
+
+  /// Romanian
   RO,
+
+  /// Russian
   RU,
+
+  /// Swedish
   SV,
+
+  /// Swedish
   SE,
+
+  /// Slovak
   SK,
+
+  /// Slovenian
   SL,
+
+  /// Spanish
   SP,
+
+  ///Spanish
   ES,
+
+  /// Serbian
   SR,
+
+  /// Thai
   TH,
+
+  /// Turkish
   TR,
+
+  /// Ukrainian
   UA,
+
+  /// Ukrainian
   UK,
+
+  /// Vietnamese
   VI,
+
+  /// Chinese Simplified
   ZH_CN,
+
+  /// Chinese Traditional
   ZH_TW,
+
+  /// Zulu
   ZU,
 }
 
+/// Language enum to String
 final languageMappings = {
   Language.AF: 'af',
   Language.AL: 'al',

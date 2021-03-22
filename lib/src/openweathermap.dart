@@ -1,14 +1,17 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../openweather_entities.dart';
 import 'enums/enums.dart';
-import 'package:openweathermap/openweather_entities.dart';
 
+/// OpenWeather class
 class OpenWeather {
   final String _key;
   final String _baseUrl = 'api.openweathermap.org';
 
+  /// Basic constructor
   OpenWeather(this._key);
 
+  /// Get current weather from city name
   Future<Weather> currentWeatherByName(
     String cityName, {
     Units units = Units.STANDARD,
@@ -26,6 +29,7 @@ class OpenWeather {
     );
   }
 
+  /// Get current weather from city id
   Future<Weather> currentWeatherById(
     int id, {
     Units units = Units.STANDARD,
@@ -43,6 +47,7 @@ class OpenWeather {
     );
   }
 
+  /// Get current weather from city coordinates
   Future<Weather> currentWeatherByCoord(
     Coordinates coord, {
     Units units = Units.STANDARD,
@@ -61,6 +66,7 @@ class OpenWeather {
     );
   }
 
+  /// Get current weather from city zip code
   Future<Weather> currentWeatherByZip(
     int zipCode, {
     Units units = Units.STANDARD,
@@ -78,6 +84,7 @@ class OpenWeather {
     );
   }
 
+  /// Get daily forecast from city coordinates
   Future<Daily> dailyWeatherByCoord(
     Coordinates coord, {
     Units units = Units.STANDARD,

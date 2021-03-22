@@ -1,3 +1,4 @@
+/// Temperature data
 class Temperature {
   num _temp;
   num _feelsLike;
@@ -6,6 +7,7 @@ class Temperature {
   int _pressure;
   int _humidity;
 
+  /// Creates a [Temperature] object
   Temperature(
     this._temp,
     this._feelsLike,
@@ -15,6 +17,7 @@ class Temperature {
     this._humidity,
   );
 
+  /// Creates a [Temperature] object from json
   factory Temperature.fromJson(Map<String, dynamic> json) {
     return Temperature(
       json['temp'],
@@ -26,6 +29,7 @@ class Temperature {
     );
   }
 
+  /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
       'temp': _temp,
@@ -37,10 +41,21 @@ class Temperature {
     };
   }
 
+  /// Temperature
   num get temp => _temp;
+
+  /// This temperature parameter accounts for the human perception of weather
   num get feelsLike => _feelsLike;
+
+  /// Minimum temperature at the moment
   num get tempMin => _tempMin;
+
+  /// Maximum temperature at the moment
   num get tempMax => _tempMax;
+
+  /// Atmospheric pressure
   int get pressure => _pressure;
+
+  /// Humidity
   int get humidity => _humidity;
 }
