@@ -1,16 +1,23 @@
 /// Daily human perception of weather data
 class DailyFeelsLike {
-  num _day;
-  num _morn;
-  num _eve;
-  num _night;
+  /// Day temperature
+  final num day;
+
+  /// Morning temperature
+  final num morn;
+
+  /// Evening temperature
+  final num eve;
+
+  /// Night temperature
+  final num night;
 
   /// Creates a [DailyFeelsLike] object
   DailyFeelsLike(
-    this._day,
-    this._morn,
-    this._eve,
-    this._night,
+    this.day,
+    this.morn,
+    this.eve,
+    this.night,
   );
 
   /// Creates a [DailyFeelsLike] object from json
@@ -26,22 +33,10 @@ class DailyFeelsLike {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      'day': _day,
-      'morn': _morn,
-      'eve': _eve,
-      'night': _night,
+      'day': day,
+      'morn': morn,
+      'eve': eve,
+      'night': night,
     };
   }
-
-  /// Day temperature
-  num get day => _day;
-
-  /// Morning temperature
-  num get morn => _morn;
-
-  /// Evening temperature
-  num get eve => _eve;
-
-  /// Night temperature
-  num get night => _night;
 }

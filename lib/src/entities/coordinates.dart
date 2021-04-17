@@ -1,12 +1,15 @@
 /// Geographical coordinates
 class Coordinates {
-  double _lat;
-  double _lon;
+  /// Latitude
+  final double lat;
+
+  /// Longitude
+  final double lon;
 
   /// Creates a [Coordinates] object
   Coordinates(
-    this._lat,
-    this._lon,
+    this.lat,
+    this.lon,
   );
 
   /// Creates a [Coordinates] object from json
@@ -17,14 +20,8 @@ class Coordinates {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      'lat': _lat,
-      'lon': _lon,
+      'lat': lat,
+      'lon': lon,
     };
   }
-
-  /// Latitude
-  double get lat => _lat;
-
-  /// Longitude
-  double get lon => _lon;
 }

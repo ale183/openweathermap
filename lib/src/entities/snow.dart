@@ -1,12 +1,15 @@
 /// Snow data
 class Snow {
-  num? _oneHour;
-  num? _threeHours;
+  /// Snow volume for the last 1 hour
+  final num? oneHour;
+
+  /// Snow volume for the last 3 hour
+  final num? threeHours;
 
   /// Creates a [Snow] object
   Snow(
-    this._oneHour,
-    this._threeHours,
+    this.oneHour,
+    this.threeHours,
   );
 
   /// Creates a [Snow] object from json
@@ -20,14 +23,8 @@ class Snow {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      '1h': _oneHour,
-      '3h': _threeHours,
+      '1h': oneHour,
+      '3h': threeHours,
     };
   }
-
-  /// Snow volume for the last 1 hour
-  num? get oneHour => _oneHour;
-
-  /// Snow volume for the last 3 hour
-  num? get threeHours => _threeHours;
 }

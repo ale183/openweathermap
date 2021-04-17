@@ -1,14 +1,19 @@
 /// Wind data
 class Wind {
-  num _speed;
-  num _deg;
-  num? _gust;
+  /// Wind speed
+  final num speed;
+
+  /// Wind direction
+  final num deg;
+
+  /// Wind gust
+  final num? gust;
 
   /// Creates a [Wind] object
   Wind(
-    this._speed,
-    this._deg,
-    this._gust,
+    this.speed,
+    this.deg,
+    this.gust,
   );
 
   /// Creates a [Wind] object from json
@@ -23,18 +28,9 @@ class Wind {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      'speed': _speed,
-      'deg': _deg,
-      'gust': _gust,
+      'speed': speed,
+      'deg': deg,
+      'gust': gust,
     };
   }
-
-  /// Wind speed
-  num get speed => _speed;
-
-  /// Wind direction
-  num get deg => _deg;
-
-  /// Wind gust
-  num? get gust => _gust;
 }

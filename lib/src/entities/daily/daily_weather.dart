@@ -2,39 +2,69 @@ import '../../../openweather_entities.dart';
 
 /// Daily weather data
 class DailyWeather {
-  int _dt;
-  int _sunrise;
-  int _sunset;
-  DailyTemperature _temperature;
-  DailyFeelsLike _feelsLike;
-  int _pressure;
-  int _humidity;
-  double _dewPoint;
-  Wind _wind;
-  List<Details> _details;
-  num _clouds;
-  num _pop;
-  num? _rain;
-  num? _snow;
-  num _uvi;
+  /// Time of the forecasted data
+  final int dt;
+
+  /// Sunrise time, Unix, UTC
+  final int sunrise;
+
+  /// Sunset time, Unix, UTC
+  final int sunset;
+
+  /// [DailyTemperature] object
+  final DailyTemperature temperature;
+
+  /// [DailyFeelsLike] object
+  final DailyFeelsLike feelsLike;
+
+  /// Atmospheric pressure on the sea level
+  final int pressure;
+
+  /// Humidity
+  final int humidity;
+
+  /// Atmospheric temperature (varying according to pressure and humidity)
+  /// below which water droplets begin to condense and dew can form
+  final double dewPoint;
+
+  /// [Wind] object
+  final Wind wind;
+
+  /// List of [Details]
+  final List<Details> details;
+
+  /// Cloudiness
+  final num clouds;
+
+  /// Probability of precipitation
+  final num pop;
+
+  /// Precipitation volume
+  final num? rain;
+
+  /// Snow volume
+  final num? snow;
+
+  /// The maximum value of UV index for the day
+  final num uvi;
 
   /// Creates a [DailyWeather] object
   DailyWeather(
-    this._dt,
-    this._sunrise,
-    this._sunset,
-    this._temperature,
-    this._feelsLike,
-    this._pressure,
-    this._humidity,
-    this._dewPoint,
-    this._wind,
-    this._details,
-    this._clouds,
-    this._pop,
-    this._rain,
-    this._snow,
-    this._uvi,
+    this.dt,
+    this.sunrise,
+    this.sunset,
+    this.temperature,
+    this.feelsLike,
+    this.pressure,
+    this.humidity,
+    this.dewPoint,
+    this.wind,
+    this.details,
+    this.clouds,
+    this.pop,
+    this.rain,
+    this.snow,
+    this.uvi,
   );
 
   /// Creates a [DailyWeather] object from json
@@ -70,67 +100,21 @@ class DailyWeather {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      'dt': _dt,
-      'sunrise': _sunrise,
-      'sunset': _sunset,
-      'temp': _temperature.toJson(),
-      'feels_like': _feelsLike.toJson(),
-      'pressure': _pressure,
-      'humidity': _humidity,
-      'dew_point': _dewPoint,
-      'wind': _wind.toJson(),
-      'weather': List.generate(_details.length, (i) => _details[i].toJson()),
-      'clouds': _clouds,
-      'pop': _pop,
-      'rain': _rain,
-      'snow': _snow,
-      'uvi': _uvi,
+      'dt': dt,
+      'sunrise': sunrise,
+      'sunset': sunset,
+      'temp': temperature.toJson(),
+      'feels_like': feelsLike.toJson(),
+      'pressure': pressure,
+      'humidity': humidity,
+      'dew_point': dewPoint,
+      'wind': wind.toJson(),
+      'weather': List.generate(details.length, (i) => details[i].toJson()),
+      'clouds': clouds,
+      'pop': pop,
+      'rain': rain,
+      'snow': snow,
+      'uvi': uvi,
     };
   }
-
-  /// Time of the forecasted data
-  int get dt => _dt;
-
-  /// Sunrise time, Unix, UTC
-  int get sunrise => _sunrise;
-
-  /// Sunset time, Unix, UTC
-  int get sunset => _sunset;
-
-  /// [DailyTemperature] object
-  DailyTemperature get temperature => _temperature;
-
-  /// [DailyFeelsLike] object
-  DailyFeelsLike get feelsLike => _feelsLike;
-
-  /// Atmospheric pressure on the sea level
-  int get pressure => _pressure;
-
-  /// Humidity
-  int get humidity => _humidity;
-
-  /// Atmospheric temperature (varying according to pressure and humidity)
-  /// below which water droplets begin to condense and dew can form
-  double get dewPoint => _dewPoint;
-
-  /// [Wind] object
-  Wind get wind => _wind;
-
-  /// List of [Details]
-  List<Details> get details => _details;
-
-  /// Cloudiness
-  num get clouds => _clouds;
-
-  /// Probability of precipitation
-  num get pop => _pop;
-
-  /// Precipitation volume
-  num? get rain => _rain;
-
-  /// Snow volume
-  num? get snow => _snow;
-
-  /// The maximum value of UV index for the day
-  num get uvi => _uvi;
 }

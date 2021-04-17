@@ -1,20 +1,31 @@
 /// Daily temperature data
 class DailyTemperature {
-  num _day;
-  num _min;
-  num _max;
-  num _morn;
-  num _eve;
-  num _night;
+  /// Day temperature
+  final num day;
+
+  /// Min daily temperature
+  final num min;
+
+  /// Max daily temperature
+  final num max;
+
+  /// Morning temperature
+  final num morn;
+
+  /// Evening temperature
+  final num eve;
+
+  /// Night temperature
+  final num night;
 
   /// Creates a [DailyTemperature] object
   DailyTemperature(
-    this._day,
-    this._min,
-    this._max,
-    this._morn,
-    this._eve,
-    this._night,
+    this.day,
+    this.min,
+    this.max,
+    this.morn,
+    this.eve,
+    this.night,
   );
 
   /// Creates a [DailyTemperature] object from json
@@ -32,30 +43,12 @@ class DailyTemperature {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      'day': _day,
-      'min': _min,
-      'max': _max,
-      'morn': _morn,
-      'eve': _eve,
-      'night': _night,
+      'day': day,
+      'min': min,
+      'max': max,
+      'morn': morn,
+      'eve': eve,
+      'night': night,
     };
   }
-
-  /// Day temperature
-  num get day => _day;
-
-  /// Min daily temperature
-  num get min => _min;
-
-  /// Max daily temperature
-  num get max => _max;
-
-  /// Morning temperature
-  num get morn => _morn;
-
-  /// Evening temperature
-  num get eve => _eve;
-
-  /// Night temperature
-  num get night => _night;
 }

@@ -2,17 +2,24 @@ import '../../../openweather_entities.dart';
 
 /// Daily temperature data
 class Daily {
-  Coordinates _coord;
-  String _timezone;
-  int _timezoneOffset;
-  List<DailyWeather> _dailyWeather;
+  /// [Coordinates] object
+  final Coordinates coord;
+
+  /// Timezone name for the requested location
+  final String timezone;
+
+  /// Shift in seconds from UTC
+  final int timezoneOffset;
+
+  /// List of [DailyWeather]
+  final List<DailyWeather> dailyWeather;
 
   /// Creates a [Daily] object
   Daily(
-    this._coord,
-    this._timezone,
-    this._timezoneOffset,
-    this._dailyWeather,
+    this.coord,
+    this.timezone,
+    this.timezoneOffset,
+    this.dailyWeather,
   );
 
   /// Creates a [Daily] object from json
@@ -31,23 +38,11 @@ class Daily {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      'coordinates': _coord.toJson(),
-      'timezone': _timezone,
-      'timezone_offset': _timezoneOffset,
+      'coordinates': coord.toJson(),
+      'timezone': timezone,
+      'timezone_offset': timezoneOffset,
       'daily':
-          List.generate(_dailyWeather.length, (i) => _dailyWeather[i].toJson()),
+          List.generate(dailyWeather.length, (i) => dailyWeather[i].toJson()),
     };
   }
-
-  /// [Coordinates] object
-  Coordinates get coord => _coord;
-
-  /// Timezone name for the requested location
-  String get timezone => _timezone;
-
-  /// Shift in seconds from UTC
-  int get timezoneOffset => _timezoneOffset;
-
-  /// List of [DailyWeather]
-  List<DailyWeather> get dailyWeather => _dailyWeather;
 }

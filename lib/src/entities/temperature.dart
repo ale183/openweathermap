@@ -1,20 +1,31 @@
 /// Temperature data
 class Temperature {
-  num _temp;
-  num _feelsLike;
-  num _tempMin;
-  num _tempMax;
-  int _pressure;
-  int _humidity;
+  /// Temperature
+  final num temp;
+
+  /// This temperature parameter accounts for the human perception of weather
+  final num feelsLike;
+
+  /// Minimum temperature at the moment
+  final num tempMin;
+
+  /// Maximum temperature at the moment
+  final num tempMax;
+
+  /// Atmospheric pressure
+  final int pressure;
+
+  /// Humidity
+  final int humidity;
 
   /// Creates a [Temperature] object
   Temperature(
-    this._temp,
-    this._feelsLike,
-    this._tempMin,
-    this._tempMax,
-    this._pressure,
-    this._humidity,
+    this.temp,
+    this.feelsLike,
+    this.tempMin,
+    this.tempMax,
+    this.pressure,
+    this.humidity,
   );
 
   /// Creates a [Temperature] object from json
@@ -32,30 +43,12 @@ class Temperature {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      'temp': _temp,
-      'feels_like': _feelsLike,
-      'temp_min': _tempMin,
-      'temp_max': _tempMax,
-      'pressure': _pressure,
-      'humidity': _humidity,
+      'temp': temp,
+      'feels_like': feelsLike,
+      'temp_min': tempMin,
+      'temp_max': tempMax,
+      'pressure': pressure,
+      'humidity': humidity,
     };
   }
-
-  /// Temperature
-  num get temp => _temp;
-
-  /// This temperature parameter accounts for the human perception of weather
-  num get feelsLike => _feelsLike;
-
-  /// Minimum temperature at the moment
-  num get tempMin => _tempMin;
-
-  /// Maximum temperature at the moment
-  num get tempMax => _tempMax;
-
-  /// Atmospheric pressure
-  int get pressure => _pressure;
-
-  /// Humidity
-  int get humidity => _humidity;
 }

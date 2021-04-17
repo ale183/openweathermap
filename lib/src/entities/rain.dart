@@ -1,12 +1,15 @@
 /// Rain data
 class Rain {
-  num? _oneHour;
-  num? _threeHours;
+  /// Rain volume for the last 1 hour
+  final num? oneHour;
+
+  /// Rain volume for the last 3 hours
+  final num? threeHours;
 
   /// Creates a [Rain]
   Rain(
-    this._oneHour,
-    this._threeHours,
+    this.oneHour,
+    this.threeHours,
   );
 
   /// Creates a [Rain] object from json
@@ -20,14 +23,8 @@ class Rain {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      '1h': _oneHour,
-      '3h': _threeHours,
+      '1h': oneHour,
+      '3h': threeHours,
     };
   }
-
-  /// Rain volume for the last 1 hour
-  num? get oneHour => _oneHour;
-
-  /// Rain volume for the last 3 hours
-  num? get threeHours => _threeHours;
 }

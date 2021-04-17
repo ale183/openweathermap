@@ -1,16 +1,23 @@
 /// Weather details
 class Details {
-  int _id;
-  String _main;
-  String _description;
-  String _icon;
+  /// Weather condition id
+  final int id;
+
+  /// Group of weather parameters (Rain, Snow, Extreme etc.)
+  final String main;
+
+  /// Weather condition within the group.
+  final String description;
+
+  /// Weather icon id
+  final String icon;
 
   /// Creates a [Details] object
   Details(
-    this._id,
-    this._main,
-    this._description,
-    this._icon,
+    this.id,
+    this.main,
+    this.description,
+    this.icon,
   );
 
   /// Creates a [Details] object from json
@@ -31,22 +38,10 @@ class Details {
   /// Returns a [Map] with the object data
   Map<String, dynamic> toJson() {
     return {
-      'id': _id,
-      'main': _main,
-      'description': _description,
-      'icon': _icon,
+      'id': id,
+      'main': main,
+      'description': description,
+      'icon': icon,
     };
   }
-
-  /// Weather condition id
-  int get id => _id;
-
-  /// Group of weather parameters (Rain, Snow, Extreme etc.)
-  String get main => _main;
-
-  /// Weather condition within the group.
-  String get description => _description;
-
-  /// Weather icon id
-  String get icon => _icon;
 }

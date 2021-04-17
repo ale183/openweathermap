@@ -104,10 +104,9 @@ class OpenWeather {
     required Map<String, dynamic> params,
   }) async {
     params.updateAll((k, v) => '$v');
-    var fparams = params.cast<String, String>();
-    fparams['appid'] = _key;
+    params['appid'] = _key;
     var response = await http.get(
-      Uri.https('$_baseUrl', '/data/2.5/$method', fparams),
+      Uri.https('$_baseUrl', '/data/2.5/$method', params),
     );
     var jsonBody = json.decode(response.body);
     if (response.statusCode == 200) {
