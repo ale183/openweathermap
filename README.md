@@ -15,6 +15,5 @@ void main() async{
 Add openweathermap on `pubspec.yaml`:
 ```yaml
 dependencies:
-    openweathermap:
-        git: https://github.com/ale183/openweathermap.git
+    openweathermap: ^version
 ```

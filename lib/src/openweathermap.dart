@@ -14,8 +14,8 @@ class OpenWeather {
   /// Get current weather from city name
   Future<Weather> currentWeatherByName(
     String cityName, {
-    Units units = Units.STANDARD,
-    Language lang = Language.EN,
+    Units units = Units.standard,
+    Language lang = Language.en,
   }) async {
     return Weather.fromJson(
       await _request(
@@ -32,8 +32,8 @@ class OpenWeather {
   /// Get current weather from city id
   Future<Weather> currentWeatherById(
     int id, {
-    Units units = Units.STANDARD,
-    Language lang = Language.EN,
+    Units units = Units.standard,
+    Language lang = Language.en,
   }) async {
     return Weather.fromJson(
       await _request(
@@ -50,8 +50,8 @@ class OpenWeather {
   /// Get current weather from city coordinates
   Future<Weather> currentWeatherByCoord(
     Coordinates coord, {
-    Units units = Units.STANDARD,
-    Language lang = Language.EN,
+    Units units = Units.standard,
+    Language lang = Language.en,
   }) async {
     return Weather.fromJson(
       await _request(
@@ -69,8 +69,8 @@ class OpenWeather {
   /// Get current weather from city zip code
   Future<Weather> currentWeatherByZip(
     int zipCode, {
-    Units units = Units.STANDARD,
-    Language lang = Language.EN,
+    Units units = Units.standard,
+    Language lang = Language.en,
   }) async {
     return Weather.fromJson(
       await _request(
@@ -87,8 +87,8 @@ class OpenWeather {
   /// Get daily forecast from city coordinates
   Future<Daily> dailyWeatherByCoord(
     Coordinates coord, {
-    Units units = Units.STANDARD,
-    Language lang = Language.EN,
+    Units units = Units.standard,
+    Language lang = Language.en,
   }) async {
     return Daily.fromJson(await _request('onecall', params: {
       'lat': coord.lat,

@@ -1,6 +1,6 @@
 name: openweathermap
 description: OpenWeatherMap API Wrapper 
-version: 0.1.3
+version: 0.1.4
 homepage: https://github.com/ale183/openweathermap
 issue_tracker: https://github.com/ale183/openweathermap/issues
 
@@ -8,7 +8,7 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  http: ^0.13.1
+  http: ^0.13.3
 
 dev_dependencies:
   effective_dart: ^1.3.1

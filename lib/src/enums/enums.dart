@@ -1,221 +1,221 @@
 /// Units of measurement
 enum Units {
   /// Standard
-  STANDARD,
+  standard,
 
   /// Metric
-  METRIC,
+  metric,
 
   /// Imperial
-  IMPERIAL,
+  imperial,
 }
 
 /// Units enum to String
 final unitsMappings = {
-  Units.STANDARD: 'standard',
-  Units.METRIC: 'metric',
-  Units.IMPERIAL: 'imperial',
+  Units.standard: 'standard',
+  Units.metric: 'metric',
+  Units.imperial: 'imperial',
 };
 
 /// Supported languages
 enum Language {
   /// Afrikaans
-  AF,
+  af,
 
   /// Albanian
-  AL,
+  al,
 
   /// Arabic
-  AR,
+  ar,
 
   /// Azerbaijani
-  AZ,
+  az,
 
   /// Bulgarian
-  BG,
+  bg,
 
   /// Catalan
-  CA,
+  ca,
 
   /// Czech
-  CZ,
+  cz,
 
   /// Danish
-  DA,
+  da,
 
   /// German
-  DE,
+  de,
 
   /// Greek
-  EL,
+  el,
 
   /// English
-  EN,
+  en,
 
   /// Basque
-  EU,
+  eu,
 
   /// Persian (Farsi)
-  FA,
+  fa,
 
   /// Finnish
-  FI,
+  fi,
 
   /// French
-  FR,
+  fr,
 
   /// Galician
-  GL,
+  gl,
 
   /// Hebrew
-  HE,
+  he,
 
   /// Hindi
-  HI,
+  hi,
 
   /// Croatian
-  HR,
+  hr,
 
   /// Hungarian
-  HU,
+  hu,
 
   /// Indonesian
-  ID,
+  id,
 
   /// Italian
-  IT,
+  it,
 
   /// Japanese
-  JA,
+  ja,
 
   /// Korean
-  KR,
+  kr,
 
   /// Latvian
-  LA,
+  la,
 
   /// Lithuanian
-  LT,
+  lt,
 
   /// Macedonian
-  MK,
+  mk,
 
   /// Norwegian
-  NO,
+  no,
 
   /// Dutch
-  NL,
+  nl,
 
   /// Polish
-  PL,
+  pl,
 
   /// Portuguese
-  PT,
+  pt,
 
   /// Português Brasil
-  PT_BR,
+  ptBr,
 
   /// Romanian
-  RO,
+  ro,
 
   /// Russian
-  RU,
+  ru,
 
   /// Swedish
-  SV,
+  sv,
 
   /// Swedish
-  SE,
+  se,
 
   /// Slovak
-  SK,
+  sk,
 
   /// Slovenian
-  SL,
+  sl,
 
   /// Spanish
-  SP,
+  sp,
 
   ///Spanish
-  ES,
+  es,
 
   /// Serbian
-  SR,
+  sr,
 
   /// Thai
-  TH,
+  th,
 
   /// Turkish
-  TR,
+  tr,
 
   /// Ukrainian
-  UA,
+  ua,
 
   /// Ukrainian
-  UK,
+  uk,
 
   /// Vietnamese
-  VI,
+  vi,
 
   /// Chinese Simplified
-  ZH_CN,
+  zhCn,
 
   /// Chinese Traditional
-  ZH_TW,
+  zhTw,
 
   /// Zulu
-  ZU,
+  zu,
 }
 
 /// Language enum to String
 final languageMappings = {
-  Language.AF: 'af',
-  Language.AL: 'al',
-  Language.AR: 'ar',
-  Language.AZ: 'az',
-  Language.BG: 'bg',
-  Language.CA: 'ca',
-  Language.CZ: 'cz',
-  Language.DA: 'da',
-  Language.DE: 'de',
-  Language.EL: 'el',
-  Language.EN: 'en',
-  Language.EU: 'eu',
-  Language.FA: 'fa',
-  Language.FI: 'fi',
-  Language.FR: 'fr',
-  Language.GL: 'gl',
-  Language.HE: 'he',
-  Language.HI: 'hi',
-  Language.HR: 'hr',
-  Language.HU: 'hu',
-  Language.ID: 'id',
-  Language.IT: 'it',
-  Language.JA: 'ja',
-  Language.KR: 'kr',
-  Language.LA: 'la',
-  Language.LT: 'lt',
-  Language.MK: 'mk',
-  Language.NO: 'no',
-  Language.NL: 'nl',
-  Language.PL: 'pl',
-  Language.PT: 'pt',
-  Language.PT_BR: 'pt_br',
-  Language.RO: 'ro',
-  Language.RU: 'ru',
-  Language.SV: 'sv',
-  Language.SE: 'se',
-  Language.SK: 'sk',
-  Language.SL: 'sl',
-  Language.SP: 'sp',
-  Language.ES: 'es',
-  Language.SR: 'sr',
-  Language.TH: 'th',
-  Language.TR: 'tr',
-  Language.UA: 'ua',
-  Language.UK: 'uk',
-  Language.VI: 'vi',
-  Language.ZH_CN: 'zh_cn',
-  Language.ZH_TW: 'zh_tw',
-  Language.ZU: 'zu',
+  Language.af: 'af',
+  Language.al: 'al',
+  Language.ar: 'ar',
+  Language.az: 'az',
+  Language.bg: 'bg',
+  Language.ca: 'ca',
+  Language.cz: 'cz',
+  Language.da: 'da',
+  Language.de: 'de',
+  Language.el: 'el',
+  Language.en: 'en',
+  Language.eu: 'eu',
+  Language.fa: 'fa',
+  Language.fi: 'fi',
+  Language.fr: 'fr',
+  Language.gl: 'gl',
+  Language.he: 'he',
+  Language.hi: 'hi',
+  Language.hr: 'hr',
+  Language.hu: 'hu',
+  Language.id: 'id',
+  Language.it: 'it',
+  Language.ja: 'ja',
+  Language.kr: 'kr',
+  Language.la: 'la',
+  Language.lt: 'lt',
+  Language.mk: 'mk',
+  Language.no: 'no',
+  Language.nl: 'nl',
+  Language.pl: 'pl',
+  Language.pt: 'pt',
+  Language.ptBr: 'pt_br',
+  Language.ro: 'ro',
+  Language.ru: 'ru',
+  Language.sv: 'sv',
+  Language.se: 'se',
+  Language.sk: 'sk',
+  Language.sl: 'sl',
+  Language.sp: 'sp',
+  Language.es: 'es',
+  Language.sr: 'sr',
+  Language.th: 'th',
+  Language.tr: 'tr',
+  Language.ua: 'ua',
+  Language.uk: 'uk',
+  Language.vi: 'vi',
+  Language.zhCn: 'zh_cn',
+  Language.zhTw: 'zh_tw',
+  Language.zu: 'zu',
 };
